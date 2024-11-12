@@ -8,7 +8,7 @@ function App() {
   
   const [showModel, setShowModel] = useState(false)
   const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
 
   function handleToggleModel(){
@@ -34,11 +34,16 @@ function App() {
 
   return (
     <>
-      <Main/>
+      {data ? (<Main data={data}/>)
+      : <div className='loadingState'>
+        <i className="fa-solid fa-gear"></i>
+      </div>
+      }
       {showModel && (
-        <Sidebar handleToggleModel={handleToggleModel}/>
+        <Sidebar handleToggleModel={handleToggleModel} data={data}/>
         )}
-      <Footer handleToggleModel={handleToggleModel} />
+      {data &&
+      (<Footer handleToggleModel={handleToggleModel} data={data} />)}
 
     </>
   )

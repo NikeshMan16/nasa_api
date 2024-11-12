@@ -9,8 +9,8 @@ export default function Footer(props) {
     <footer>
         <div className='bgGradient'></div>
         <div>
-            <h2>Topview of the Landscape</h2>
             <h1>APOD project</h1>
+            <h2>Topview of the Landscape</h2>
         </div>
         <button onClick={handleToggleModel}>
         <i className="fa-solid fa-circle-info"></i>
